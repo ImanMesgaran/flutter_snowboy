@@ -24,7 +24,7 @@ import 'package:flutter/services.dart';
 
 class Snowboy {
   MethodChannel _channel = const MethodChannel('plugin_snowboy');
-  Function hotwordHandler;
+  Function? hotwordHandler;
 
   Snowboy() {
     // Register handler to receive messages from native plugin
@@ -36,7 +36,7 @@ class Snowboy {
     switch (methodCall.method) {
       case 'hotword':
         if (hotwordHandler != null) {
-          hotwordHandler();
+          hotwordHandler!();
         }
         break;
       default:
